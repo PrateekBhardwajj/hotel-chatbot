@@ -1,27 +1,43 @@
-Directory structure
-===================
-backend: Contains Python FastAPI backend code
-db: contains the dump of the database. you need to import this into your MySQL db by using MySQL workbench tool
-dialogflow_assets: this has training phrases etc. for our intents
-frontend: website code
+Restaurant Chatbot(largest font)
+This project implements a Restaurant Chatbot which interacts with users to help them make reservations, view the menu, and ask general queries. The chatbot is built using Dialogflow for natural language understanding and integrates with a backend built with FastAPI. The backend connects to a MySQL database to retrieve restaurant data. The frontend of the website is created using HTML and CSS to provide a user-friendly interface.
 
-Install these modules
-======================
+Features
+Dialogflow Chatbot: The chatbot uses Dialogflow for natural language processing to understand user queries.
+FastAPI Backend: FastAPI is used to handle requests, process data, and interact with the MySQL database.
+MySQL Database: Stores restaurant data like menus, reservations, etc.
+HTML/CSS Frontend: A simple yet elegant interface for the user to interact with the chatbot.
+Ngrok: Exposes the FastAPI backend to the internet for Dialogflow webhook integration.
 
-pip install mysql-connector
-pip install "fastapi[all]"
+Project Structure
+/restaurant-chatbot
+│
+├── /frontend
+│   ├── index.html          # Main HTML file
+│   └── styles.css          # CSS file for styling
+│
+├── /backend
+│   ├── main.py             # FastAPI app with API endpoints
+│   ├── db_connector.py     # MySQL connector
+│   └── chatbot.py          # Code to integrate with Dialogflow
+│
+├── requirements.txt        # Python dependencies
+└── README.md               # This README file
 
-OR just run pip install -r backend/requirements.txt to install both in one shot
 
-To start fastapi backend server
-================================
-1. Go to backend directory in your command prompt
-2. Run this command: uvicorn main:app --reload
+Technologies Used(larf
+Dialogflow: For creating the conversational interface.
+FastAPI: For building the API that serves the chatbot and connects to the database.
+MySQL: For storing restaurant data (menus, reservations, etc.).
+HTML/CSS: For building the frontend of the chatbot interface.
+Ngrok: For exposing the local FastAPI server to the internet.
 
-ngrok for https tunneling
-================================
-1. To install ngrok, go to https://ngrok.com/download and install ngrok version that is suitable for your OS
-2. Extract the zip file and place ngrok.exe in a folder.
-3. Open windows command prompt, go to that folder and run this command: ngrok http 80000
+Usage
+Users can interact with the chatbot by asking questions like "Show me the menu," "Make a reservation for tomorrow," or "What's the price of the burger?"
+The FastAPI backend retrieves data from the MySQL database and sends it back to the frontend, which is displayed through the chatbot.
+Dialogflow's webhook is configured to forward requests to your FastAPI backend via Ngrok.
 
-NOTE: ngrok can timeout. you need to restart the session if you see session expired message.
+Future Improvements
+Authentication: Add user authentication to manage reservations and user profiles.
+Integration with external services: Integrate payment gateways or third-party services for ordering food.
+Improve frontend: Enhance the UI/UX of the website and chatbot interface.
+Expand Dialogflow intents: Add more conversational capabilities, such as handling user feedback or giving special offers.
