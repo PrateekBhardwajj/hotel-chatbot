@@ -1,4 +1,4 @@
-Restaurant Chatbot**This is bold text**
+Restaurant Chatbot                                          **This is bold text**
 This project implements a Restaurant Chatbot which interacts with users to help them make reservations, view the menu, and ask general queries. The chatbot is built using Dialogflow for natural language understanding and integrates with a backend built with FastAPI. The backend connects to a MySQL database to retrieve restaurant data. The frontend of the website is created using HTML and CSS to provide a user-friendly interface.
 
 Features
